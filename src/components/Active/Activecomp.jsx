@@ -55,11 +55,13 @@ const SmActivecomp = () => {
   return (
     <div>
       <div className="container mx-auto px-4 w-full mt-40">
-        <div className='w-full flex flex-col items-center '>
+        <div className='w-full flex flex-col items-around '>
          <div>
         <h6 className='text-base text-red-500'>WHO WE ARE</h6>
             <h3 className='text-5xl'> We are<br />committed<br />to delivering<br />the best, to<br />those who<br />seek the best<br />in life.</h3>
-            </div> 
+          </div> 
+         
+          
         </div>
         <div className='w-full  h-full relative mt-4'>
         <div className='  flex justify-center'>
