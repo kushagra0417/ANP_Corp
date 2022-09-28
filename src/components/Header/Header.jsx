@@ -1,12 +1,30 @@
-import React, { useState } from "react"
+import React, { useState ,useEffect} from "react"
+import Slider from "react-slick";
 import front from "../../Assets/front.png"
 import Logo from "../../Assets/Logo.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import "./Header.css"
+
+
 
 import { BiChevronDown } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi"
 import {AiOutlinePlus,AiOutlineClose} from "react-icons/ai"
+import Droupdown from "./Droupdown";
 
 const Lgheader = () => {
+
+  const settings = {
+    slidesToShow: 1,
+    infinite: true,
+    autoplay: true,
+    adaptiveHeight:false,
+    
+    speed: 500,
+    slideToScroll: 1
+};
   return (
     <div className="relative w-full  " style={{ height: "35rem" }}>
           <div className='w-full'>
@@ -17,9 +35,12 @@ const Lgheader = () => {
              <div><h6 className='text-white underline hover:cursor-pointer'><a href='#' >Explore Project</a></h6></div> 
           </div>
           <div className='  w-1/2 pt-2.5 pb-2.5 flex justify-around items-center bg-white '>
-            <div><h6 className='text-black   hover:cursor-pointer'><a href='#' className='flex items-end' >Residential<BiChevronDown/></a></h6></div> 
-            <div><h6 className='text-black   hover:cursor-pointer'><a href='#' className='flex items-end'>Hospitality<BiChevronDown/></a></h6></div> 
-              <div><h6 className='text-black   hover:cursor-pointer'><a href='#' className='flex items-end'>Commercial<BiChevronDown/></a></h6></div> 
+          
+            <div className='flex items-end'><Droupdown name="Residential" /> <BiChevronDown/></div> 
+            
+            <div className='flex items-end'><Droupdown name="Hospitality" /> <BiChevronDown/></div> 
+            <div className='flex items-end'><Droupdown name="Commercial"/> <BiChevronDown/></div> 
+              
               <div><h6 className='text-black  hover:cursor-pointer'><a href='#' className='text-red-500'><GiHamburgerMenu/></a></h6></div> 
               
           </div>
@@ -55,15 +76,40 @@ const Lgheader = () => {
             </div>
               
           </div>
-          
-
           <div className="absolute h-full w-full z-20" style={{ background: "#01080D", opacity: "49%"}}/>
-          <img src={front}  alt="poster" className="w-full h-full"/> 
+      <Slider {...settings}   >  
+      <div className="w-full h-full ">
+      
+      <img src={front}  alt="poster" className="w-full h-full"/> 
+        </div>
+        <div className="w-full h-full ">
+        
+        <img src={front}  alt="poster" className="w-full h-full"/> 
+        </div>
+         <div className="w-full h-full ">
+        
+        <img src={front}  alt="poster" className="w-full h-full"/> 
+        </div>
+        <div className="w-full h-full ">
+        
+        <img src={front}  alt="poster" className="w-full h-full"/> 
+          </div>
+        
+      </Slider>  
+         
       </div>
   )
 }
 
 const MdSmheader = () => {
+  const settings = {
+   
+    slidesToShow: 1,
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    slideToScroll: 1
+};
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   const handleToggle = () => {
@@ -94,8 +140,25 @@ const MdSmheader = () => {
           
     </div>
       </div>
-  <div className="absolute h-full w-full z-20" style={{ background: "#01080D", opacity: "49%"}}/>
-      <img src={front} alt="poster" className="w-full h-full" /> 
+      <div className="absolute h-full w-full z-20" style={{ background: "#01080D", opacity: "49%" }} />
+      <Slider {...settings}     >  
+      <div className="w-full h-full ">
+      
+      <img src={front}  alt="poster" className="w-full h-full"/> 
+        </div>
+        <div className="w-full h-full ">
+      
+      <img src={front}  alt="poster" className="w-full h-full"/> 
+        </div>
+        <div className="w-full h-full ">
+      
+        <img src={front}  alt="poster" className="w-full h-full"/> 
+        </div>
+        <div className="w-full h-full ">
+      
+        <img src={front}  alt="poster" className="w-full h-full"/> 
+          </div>
+       </Slider> 
       <div className='w-full  pt-2.5 pb-2.5  flex flex-col gap-3 md:gap-0 md:flex-row justify-around items-center  bg-white'>
       <div className='flex gap-2 items-center '>
           <h6 className='text-red-500 underline '>GET IN TOUCH</h6>
@@ -117,6 +180,7 @@ const MdSmheader = () => {
 }
 
 const Header = () => {
+  
   return (
     <>
       <div className='hidden lg:block'>

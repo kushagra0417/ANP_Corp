@@ -1,0 +1,17 @@
+.slick-slide {
+    height:35rem !important;
+  }
+  
+  .slick-slide img {
+    height:35rem !important; 
+  }
+  
+  @media screen and (max-width: 1026px) {
+    .slick-slide {
+      height:20rem !important;
+    }
+    
+    .slick-slide img {
+      height:20rem !important;
+    }
+  }
